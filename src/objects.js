@@ -52,7 +52,13 @@ function getNameUsingDestructuring(person) {
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
 function getPeopleByLocation(people, location) {
-  
+  let myArr = []
+  const desiredLocaton = location
+  const nameLocation = people.filter(function(result){
+    return people.location === desiredLocaton;
+  });
+  myArr.push(nameLocation)
+  return myArr
 }
 
 // Translate a phrase to pirate talk.
@@ -82,7 +88,9 @@ const EN_PIRATE_LOOKUP = {
   hello: 'ahoy',
 };
 
-function translateToPirateTalk(phrase) {}
+function translateToPirateTalk(phrase) {
+  const pirateTalk = hello
+}
 
 // Return the number of occurrences of each word in a string.
 // This function doesn't handle punctuation and is case-sensitive, so you can
@@ -91,7 +99,17 @@ function translateToPirateTalk(phrase) {}
 // Ex.:
 //   wordCount('hello world')
 //   => { hello: 1, world: 1 }
-function wordCount(str) {}
+function wordCount(str) {
+  const words = str.split(' ');
+  const count = {};
+
+  words.forEach((word) =>{
+    return count[word] = (count[word] || 0) + 1
+  });
+
+  return count
+
+}
 
 // Given an object representing a bug, return true if the given bug is
 // available in the given month.

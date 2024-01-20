@@ -8,7 +8,9 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
-/// TODO: replace this with your code
+const logOut = () => {
+    
+}
 
 // Send an alert
 //

@@ -69,10 +69,14 @@ function createGreetings(names) {
 //   loudLongWords(['apple', 'pear', 'cake', 'pinata']);
 //   => ['APPLE', 'PINATA']
 function loudLongWords(words) {
-    const newWords = words.filter(function(word){
-        if(word.length > 4)
-        return word.toUpperCase()
-    });
+    const newWords = words
+        .filter(function(word){
+            return word.length > 4;
+        })
+        .map(function(word) {
+            return word.toUpperCase();
+        })
+        
     return newWords 
 }
 
