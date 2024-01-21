@@ -8,9 +8,17 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
-const logOut = () => {
-    
+const logInBtn = document.querySelector("#auth")
+
+const logOutlogIn = () => {
+   if (logInBtn.innerText === "Log in"){
+    logInBtn.innerText = 'Log out'
+   } else {
+    logInBtn.innerText = 'Log in'
+   }
 }
+
+logInBtn.addEventListener('click', logOutlogIn)
 
 // Send an alert
 //

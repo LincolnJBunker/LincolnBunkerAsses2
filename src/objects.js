@@ -52,13 +52,11 @@ function getNameUsingDestructuring(person) {
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
 function getPeopleByLocation(people, location) {
-  let myArr = []
-  const desiredLocaton = location
-  const nameLocation = people.filter(function(result){
-    return people.location === desiredLocaton;
-  });
-  myArr.push(nameLocation)
-  return myArr
+  //people = array of objects
+  //location = the name of the location within the object
+let locationIWant = people.filter(person => person.location === location);
+return locationIWant
+//lets go !!!!!!!!!
 }
 
 // Translate a phrase to pirate talk.
