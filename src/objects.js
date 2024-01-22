@@ -144,6 +144,7 @@ function wordCount(str) {
 //   }, 1);
 //   => true
 function isBugAvailable(bug, month) {
+  return bug.availability.months.includes(month)
 }
 
   //bug = the object
@@ -197,7 +198,31 @@ function isBugAvailable(bug, month) {
 //     12: [],
 //   }
 
-function buildBugHuntCalendar(bugs) {}
+function buildBugHuntCalendar(bugs) {
+  //Need to return an object; keys = months, values = array of bug names
+  //avaliable in that month
+  
+  let bugMonths = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [], 
+    6: [],
+    7: [],
+    8: [],
+    9: [],
+    10: [],
+    11: [],
+    12: []
+  };
+  for (const bug of bugs){
+    for (const month of bug.availability.months){
+      bugMonths[month].push(bug.name);
+    }
+  }
+  return bugMonths
+}
 
 export {
   buildBugHuntCalendar,
