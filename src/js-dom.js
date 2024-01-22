@@ -27,7 +27,12 @@ logInBtn.addEventListener('click', logOutlogIn)
 // A user should be able to enter what they want the alert to say in the
 // text box. Then, they can submit the form to trigger the alert.
 
-/// TODO: replace this with your code
+// const sendBtn = document.querySelector("#send-alert")
+
+// function sendAlert () {
+//     alert(sendBtn);
+// }
+// sendBtn.addEventListener('click', sendAlert)
 
 // Add an item
 //
@@ -44,7 +49,16 @@ logInBtn.addEventListener('click', logOutlogIn)
 //     <li>Item</li>  <!-- This was added after double-clicking -->
 //   </ol>
 
-/// TODO: replace this with your code
+const itemBtn = document.querySelector('#item-adder');
+
+function addItem (){
+    const ol = document.querySelector('#list')
+    const li = document.createElement('li')
+    li.innerText = "Item";
+    ol.appendChild(li)
+}
+
+itemBtn.addEventListener('dblclick', addItem)
 
 // Change colors
 //
@@ -55,7 +69,26 @@ logInBtn.addEventListener('click', logOutlogIn)
 // Clicking on "Turn Stuff Red" should make text red and clicking on "Turn
 // Stuff Blue" should make text blue.
 
-/// TODO: replace this with your code
+const blueBtn = document.querySelector("#blue")
+const redBtn = document.querySelector("#red")
+const change1 = document.querySelectorAll(".changes-colors")
+
+const changeColorBlue = () => {
+   change1.forEach(element =>{
+    element.style.color = "blue"
+   })
+ }
+
+blueBtn.addEventListener('click', changeColorBlue)
+
+const changeColorRed = () =>{
+    change1.forEach(element =>{
+        element.style.color = 'red'
+    })
+}
+
+redBtn.addEventListener('click', changeColorRed)
+
 
 // Calculate factorial
 //
@@ -89,4 +122,6 @@ logInBtn.addEventListener('click', logOutlogIn)
 // the feedback text to say "The word must be at least 4 characters long." and
 // change the color of the text to red..
 
-/// TODO: replace this with your code
+const wordInput = document.querySelector("#word")
+
+

@@ -54,6 +54,8 @@ function evens(nums) {
 //   createGreetings(['Clive', 'Jill', 'Torgal']);
 //   => ['Hello, Clive!', 'Hello, Jill!', 'Hello, Torgal!']
 function createGreetings(names) {
+    //create a new array of names
+    //include the greeting
     const greetArr = names.map(function(name){
         return "Hello, "+ name + "!"
     })
@@ -70,9 +72,12 @@ function createGreetings(names) {
 //   => ['APPLE', 'PINATA']
 function loudLongWords(words) {
     const newWords = words
+    //filter out words that are greater than 4 letters
         .filter(function(word){
             return word.length > 4;
         })
+
+        //create new array of the previous words turning them to uppercase
         .map(function(word) {
             return word.toUpperCase();
         })

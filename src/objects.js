@@ -14,7 +14,10 @@
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
 function getNames(people) {
+  //set new var to the functions parameter, use map to create a new arr
+  //of names
   let fullNames = people.map(function(result){
+    //target firstName and lastName only
     return `${result.firstName} ${result.lastName}`
   })
   return fullNames
@@ -30,6 +33,7 @@ function getNames(people) {
 //   getName({ firstName: 'Gale', lastName: 'Dekarios', location: 'Waterdeep' });
 //   => 'Gale Dekarios'
 function getNameUsingDestructuring(person) {
+  //deconstruct the array only looking for first and last name
   const {firstName, lastName} = person
   return (firstName + " " + lastName)
 }
@@ -54,6 +58,10 @@ function getNameUsingDestructuring(person) {
 function getPeopleByLocation(people, location) {
   //people = array of objects
   //location = the name of the location within the object
+
+  //create new variable to target the location
+  //use filter to filter out that location
+  //if the locations match up, return the all who have that same location
 let locationIWant = people.filter(person => person.location === location);
 return locationIWant
 //lets go !!!!!!!!!
@@ -87,8 +95,14 @@ const EN_PIRATE_LOOKUP = {
 };
 
 function translateToPirateTalk(phrase) {
-  const pirateTalk = hello
+  //split the phrase into an arr of words
+  //use map to create a new arr
+  //search through the given object and see if it has any of the words
+  //if not just return the word
+  //bring the phrase back together
+  return phrase.split(" ").map(word => EN_PIRATE_LOOKUP[word] || word).join(" ")
 }
+
 
 // Return the number of occurrences of each word in a string.
 // This function doesn't handle punctuation and is case-sensitive, so you can
@@ -129,7 +143,18 @@ function wordCount(str) {
 //     }
 //   }, 1);
 //   => true
-function isBugAvailable(bug, month) {}
+function isBugAvailable(bug, month) {
+}
+
+  //bug = the object
+  //month = number representing month
+
+  //withing each object, there's two keys: name and availability
+  //availability is an object too, withholding two keys: rarity and months
+  //months is an array
+
+  //if bug is available during the month given, return true
+  //else return false
 
 // Given an array of objects representing bugs, return an object that'll be
 // used to build a calendar. The keys of the object should be the months of the
