@@ -105,7 +105,17 @@ redBtn.addEventListener('click', changeColorRed)
 //   - calls your function that calculates a factorial
 //   - puts the result of the function inside the "result" span
 
-/// TODO: replace this with your code
+const factinput = document.querySelector("#factorial-input");
+const result = document.querySelector("#result")
+const factorial = (number) => {
+    if (number === 0 || number === 1) {
+        return 1;
+    } else {
+        return number * factorial(number - 1);
+    }
+}
+
+factinput.addEventListener('submit', factorial)
 
 // Validate a form
 //
